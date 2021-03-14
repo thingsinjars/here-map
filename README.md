@@ -12,12 +12,6 @@ Include [here-map.js](here-map.js) somewhere on your page (`async`/`defer` are o
 <script src="here-map.js" async defer></script>
 ```
 
-Alternatively, use an HTML import to include [here-map.html](here-map.html):
-
-```html
-<link rel="import" href="here-map.html">
-```
-
 ## Usage
 
 Create a `<here-map>` element anywhere on your page. Be sure to style the element with `display: block` and give it a height. You can also specify `zoom`, `latitude` and `longitude` attributes:
@@ -37,7 +31,7 @@ here-map {
 ></here-map>
 ```
 
-![Demo Map of Berlin with the Eiffel Tower](example.png)
+![Demo Map of Berlin](demo/example.png)
 
 Attributes on `<here-map>` are used for map initialization only and are not updated when the user interacts with the map although if the user updates the attributes, the underlying map is affected.
 
@@ -68,6 +62,8 @@ You can also add markers to the map by using the `<here-map-marker>` element:
 </here-map>
 ```
 
+![Demo Map of Berlin with the Eiffel Tower](demo/example-marker.png)
+
 If you omit the icon, the default HERE map icon will be used.
 
-Clicking on a marker will emit a `here-marker-tap` event with the coordinates of the marker in the event detail.
+Clicking on a marker will cause the map element (NOTE: *not* the marker element) to emit a `here-marker-tap` event with the coordinates of the marker in the event detail.
