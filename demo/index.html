@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>HERE Map Web Component Demo</title>
+
+    <script src="../here-map.js" async defer></script>
+
+    <style>
+      here-map {
+        display: block;
+        height: 400px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>HERE Map Web Component Demo</h3>
+    <here-map
+      api-key="1234-54321"
+      latitude="52.5"
+      longitude="13.4"
+      zoom="14"
+    >
+      <!-- Default marker-->
+      <here-map-marker latitude="52.5" longitude="13.4" />
+
+      <!-- Custom image -->
+      <here-map-marker
+        latitude="52.501"
+        longitude="13.405"
+        icon="https://cdn3.iconfinder.com/data/icons/tourism/eiffel200.png"
+      />
+    </here-map>
+    <button onclick="setMapCenter()">Recenter</button>
+    <button onclick="moveMarkers()">Move Markers</button>
+
+    <script>
+      // We can listen to map events
+      document
+        .querySelector("here-map")
+        .addEventListener("here-map-tap", console.log);
+
+      // We can change the map from outside
+      function setMapCenter() {
+        document.querySelector("here-map").setAttribute("latitude", 52.5);
+        document.querySelector("here-map").setAttribute("longitude", 13.4);
+      }
+
+      // We can listen to marker events
+      document
+        .querySelector("here-map")
+        .addEventListener("here-marker-tap", console.log);
+
+      // We can modify markers from outside
+      function moveMarkers() {
+        document.querySelectorAll("here-map-marker").forEach((marker) => {
+          marker.setAttribute("latitude", 52.5 + Math.random() * 0.01 - 0.005);
+          marker.setAttribute("longitude", 13.4 + Math.random() * 0.01 - 0.005);
+        });
+      }
+
+      document.querySelector("here-map").addEventListener('here-map-ready', (evt) => {
+        console.log("Map instance:", evt.detail);
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "here-map",
+  "main": "here-map.js",
+  "homepage": "https://github.com/thingsinjars/here-map",
+  "authors": [
+    "Simon Madine"
+  ],
+  "description": "A simple custom element wrapper for the HERE Maps JavaScript API",
+  "license": "MIT"
+}
