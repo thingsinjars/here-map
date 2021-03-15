@@ -35,7 +35,7 @@ here-map {
 
 Attributes on `<here-map>` are used for map initialization only and are not updated when the user interacts with the map although if the user updates the attributes, the underlying map is affected.
 
-Clicking on the map will emit a `here-map-tap` event with thee coordinates in the event detail.
+Clicking on the map will emit a `here-map-tap` event with the coordinates in the event detail.
 
 For full interactive functionality, listen for the `here-map-ready` event and use  `event.detail` to access the underlying instance of [`H.map`](https://developer.here.com/documentation/maps/3.1.3.0/dev_guide/topics_api/h-map.html).
 
