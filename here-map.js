@@ -7,7 +7,7 @@
   function loadHereMaps() {
     if (!initCalled) {
       const script = document.createElement("script");
-      script.src = "https://js.api.here.com/v3/3.1/mapsjs.bundle.js";
+      script.src = "//js.api.here.com/v3/3.1/mapsjs.bundle.js";
       script.setAttribute("type", "module");
       script.onload = () => {
         window.__initHereMap();
@@ -16,7 +16,7 @@
 
       const mapCss = document.createElement("link");
       mapCss.rel = "stylesheet";
-      mapCss.href = "http://js.api.here.com/v3/3.1/mapsjs-ui.css";
+      mapCss.href = "//js.api.here.com/v3/3.1/mapsjs-ui.css";
       document.getElementsByTagName("head")[0].appendChild(mapCss);
 
       initCalled = true;
